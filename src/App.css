@@ -8,3 +8,11 @@
   font-size: calc(10px + 2vmin);
   color: white;
 }
+
+.inputPanel {
+  display: flex;
+  justify-content: space-evenly;
+  max-width: fit-content;
+  border: 1px solid white;
+  padding: 1rem;
+}
