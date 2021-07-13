@@ -1,12 +1,17 @@
 import React from 'react'
+import InputCalc from './InputCalc'
 
 const Calculator = () => {
   return (
-    <div>
+    <>
       <div className="inputPanel">
-        <h1>Calculadora</h1>
+        <h3>Calculadora Avanzada</h3>
+        <div className="inputWrapper">
+          <InputCalc />
+          <InputCalc />
+        </div>
       </div>
-    </div>
+    </>
   )
 }
 

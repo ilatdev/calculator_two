@@ -9,10 +9,41 @@
   color: white;
 }
 
+.inputWrapper {
+  display: flex;
+  flex-direction: row;
+}
+
 .inputPanel {
   display: flex;
+  flex-direction: column;
   justify-content: space-evenly;
-  max-width: fit-content;
+  align-items: center;
   border: 1px solid white;
   padding: 1rem;
+}
+
+.inputCalc {
+  display: flex;
+  flex-direction: row;
+  margin: 5px;
+}
+
+.inputCalc_field {
+  width: 20ch;
+  height: 28px;
+}
+
+.inputCalc_clear {
+  width: 75px;
+  height: 34px;
+  background-color: #32ac79;
+  font-size: 15px;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 500;
+  color: #fafafa;
+}
+
+.inputCalc_clear:hover {
+  background-color: #3bc48b;
 }
