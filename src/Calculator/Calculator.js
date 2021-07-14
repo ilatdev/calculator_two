@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
-import InputCalc from './InputCalc'
+import InputWithClear from './InputWithClear'
+import ContainerTable from './ContainerTable'
 
 const validation = /^(\d*)$|^(\d*\.\d*)$/
 
@@ -49,13 +50,13 @@ const Calculator = () => {
       <div className="inputPanel">
         <h3>Calculadora Avanzada</h3>
         <div className="inputWrapper">
-          <InputCalc
+          <InputWithClear
             id="inputOne"
             currentValue={inputOne}
             onChange={(e) => handleInputChange(e, setInputOne)}
             onClear={() => handleClear(setInputOne)}
           />
-          <InputCalc
+          <InputWithClear
             id="inputTwo"
             currentValue={inputTwo}
             onChange={(e) => handleInputChange(e, setInputTwo)}
@@ -64,6 +65,7 @@ const Calculator = () => {
         </div>
         <div className="error-wrapper">{!!error && <p>{error}</p>}</div>
       </div>
+      <ContainerTable inputOne={inputOne} inputTwo={inputTwo} />
     </>
   )
 }

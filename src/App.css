@@ -23,7 +23,6 @@ input[type='text'] {
   flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
-  border: 2px solid white;
   padding: 1rem;
 }
 
@@ -34,10 +33,42 @@ input[type='text'] {
   color: red;
 }
 
+.viewTable {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  font-size: 18px;
+  font-weight: 500;
+  margin-top: 1rem;
+}
+
+.viewRow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #454c5a;
+  border: 2px solid #282c34;
+  min-height: 40px;
+}
+
+.viewRow-leyend {
+  min-width: 200px;
+  text-align: center;
+  padding: 0 1rem;
+}
+
+.viewRow-value {
+  text-align: center;
+  min-width: 200px;
+  padding: 0 1rem;
+  color: #3bda98;
+}
+
 .inputCalc {
   display: flex;
   flex-direction: row;
   margin: 5px;
+  border: none;
 }
 
 .inputCalc_field {
@@ -48,6 +79,8 @@ input[type='text'] {
 .inputCalc_clear {
   width: 75px;
   height: 36px;
+  border: none;
+  cursor: pointer;
   background-color: #32ac79;
   font-size: 15px;
   font-family: 'Roboto', sans-serif;
@@ -55,6 +88,10 @@ input[type='text'] {
   color: #fafafa;
 }
 
+.clear_disabled {
+  background-color: rgb(153, 153, 153);
+}
+
 .inputCalc_clear:hover {
-  background-color: #3bc48b;
+  background-color: #c43b3b;
 }
