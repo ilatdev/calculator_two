@@ -1,10 +1,16 @@
 import React from 'react'
 
-export default function InputCalc(props) {
-  const { currentValue, onChange, onClear } = props
+export default function InputWithClear({
+  id,
+  currentValue,
+  onChange,
+  onClear
+}) {
+  const isCLear = currentValue === '0' ? 'clear_disabled' : ''
   return (
     <div className="inputCalc">
       <input
+        id={id}
         className="inputCalc_field"
         type="text"
         onChange={onChange}
@@ -12,7 +18,7 @@ export default function InputCalc(props) {
       />
 
       <button
-        className="inputCalc_clear"
+        className={`inputCalc_clear + ${isCLear}`}
         disabled={currentValue === '0'}
         onClick={onClear}>
         Clear
