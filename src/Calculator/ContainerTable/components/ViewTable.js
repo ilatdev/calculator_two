@@ -10,13 +10,24 @@ const reorder = (list, startIndex, endIndex) => {
   return result
 }
 
+const mergeProps = (oldArray, newArray) => {
+  let temp = []
+  oldArray.forEach((el) => {
+    newArray.forEach((item) => {
+      if (el[0] === item[0]) {
+        temp.push([el[0], item[1]])
+      }
+    })
+  })
+
+  return temp
+}
+
 function ViewTable(props) {
-  const [dragAndDrop, setDragAndDrop] = useState(null)
+  const [dragAndDrop, setDragAndDrop] = useState(Object.entries(props))
 
   useEffect(() => {
-    setDragAndDrop(Object.entries(props))
-    // Bug a resolver
-    // Al cambiar props pierde orden previo del drag and drop
+    setDragAndDrop((prevState) => mergeProps(prevState, Object.entries(props)))
   }, [props])
 
   const onDragEnd = (result) => {
