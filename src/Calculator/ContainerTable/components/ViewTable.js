@@ -10,18 +10,11 @@ const reorder = (list, startIndex, endIndex) => {
   return result
 }
 
-const mergeProps = (oldArray, newArray) => {
-  let temp = []
-  oldArray.forEach((el) => {
-    newArray.forEach((item) => {
-      if (el[0] === item[0]) {
-        temp.push([el[0], item[1]])
-      }
-    })
+const mergeProps = (oldArray, newArray) =>
+  oldArray.map((elem) => {
+    elem[1] = newArray.find((item) => item[0] === elem[0])[1]
+    return elem
   })
-
-  return temp
-}
 
 function ViewTable(props) {
   const [dragAndDrop, setDragAndDrop] = useState(Object.entries(props))
