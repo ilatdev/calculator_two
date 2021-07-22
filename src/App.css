@@ -92,10 +92,15 @@ input[type='text'] {
   color: #fafafa;
 }
 
+.inputCalc_clear:hover {
+  background-color: #c43b3b;
+}
+
 .clear_disabled {
   background-color: rgb(153, 153, 153);
 }
 
-.inputCalc_clear:hover {
-  background-color: #c43b3b;
+.clear_disabled:hover {
+  cursor: not-allowed;
+  background-color: rgb(153, 153, 153);
 }

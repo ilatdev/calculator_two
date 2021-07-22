@@ -44,10 +44,7 @@ function ViewTable(props) {
             <div {...provided.droppableProps} ref={provided.innerRef}>
               {!!dragAndDrop &&
                 dragAndDrop.map((item, index) => (
-                  <Draggable
-                    key={`${index}`}
-                    draggableId={`${index}`}
-                    index={index}>
+                  <Draggable key={index} draggableId={`${index}`} index={index}>
                     {(provided, snapshot) => (
                       <div
                         className={snapshot.isDragging ? 'isDragging' : ''}

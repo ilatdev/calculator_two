@@ -14,22 +14,28 @@ const Calculator = () => {
   const [error, setError] = useState(null)
 
   useEffect(() => {
-    const clickInputOne = (event) => {
-      if (event.target.value === '0') return setInputOne('')
-    }
-
-    const clickInputTwo = (event) => {
-      if (event.target.value === '0') return setInputTwo('')
+    const cleanInput = (event) => {
+      if (event.target.value === '0') {
+        switch (event.target.id) {
+          case 'inputOne':
+            return setInputOne('')
+          case 'inputTwo':
+            return setInputTwo('')
+          default:
+            return null
+        }
+      }
     }
 
     const inputOne = document.getElementById('inputOne')
     const inputTwo = document.getElementById('inputTwo')
 
-    inputOne.addEventListener('click', clickInputOne)
-    inputTwo.addEventListener('click', clickInputTwo)
+    inputOne.addEventListener('click', cleanInput)
+    inputTwo.addEventListener('click', cleanInput)
+
     return () => {
-      inputOne.removeEventListener('click', clickInputOne)
-      inputTwo.removeEventListener('click', clickInputTwo)
+      inputOne.removeEventListener('click', cleanInput)
+      inputTwo.removeEventListener('click', cleanInput)
     }
   }, [])
 
